@@ -37,10 +37,11 @@ const Login = () => {
     <div className="register-page">
       {loading && <Spinner />}
       <Form layout="vertical" onFinish={submitHandler}>
-        <h1>Login Form</h1>
+        <h1 className="text-xl font-bold text-black mb-4">Login Form</h1>
         <Form.Item
           label="Email"
           name="email"
+          className="text-gray-700 block mb-1 font-medium"
           rules={[{ required: true, message: "Please input your email!" }]}
         >
           <Input type="email" />
@@ -48,13 +49,20 @@ const Login = () => {
         <Form.Item
           label="Password"
           name="password"
+          className="text-gray-700 block mb-1 font-medium"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
           <Input.Password />
         </Form.Item>
         <div className="d-flex justify-content-between">
-          <Link to="/register">Not A User? Click Here To Register!</Link>
-          <Button type="primary" htmlType="submit" className="ml-5">
+          <Link to="/register" className="text-blue-500 hover:underline">
+            Not A User? Click Here To Register!
+          </Link>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="ml-5 w-full sm:w-auto"
+          >
             Login
           </Button>
         </div>
